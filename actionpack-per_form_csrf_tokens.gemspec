@@ -16,6 +16,7 @@ Gem::Specification.new do |spec|
   spec.files = Dir["CHANGELOG.md", "lib/**/*", "LICENSE.txt", "Rakefile", "README.md"]
 
   spec.add_dependency "actionpack", "~> 4.0"
+  spec.add_dependency "activesupport", "~> 4.0"
 
   spec.add_development_dependency "rails"
   spec.add_development_dependency "rake", "~> 10.0"
