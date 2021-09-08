@@ -6,4 +6,6 @@
 /pkg/
 /spec/reports/
 /tmp/
+.ruby-version
 test/dummy/log/
+Gemfile.lock
