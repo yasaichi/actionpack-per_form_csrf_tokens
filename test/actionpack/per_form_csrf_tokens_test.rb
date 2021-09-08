@@ -31,6 +31,11 @@ module ActionPack
         end
       end
 
+      def test_masked_csrf_token_authenticity
+        encoded_masked_token = @controller.send(:form_authenticity_token)
+        assert @controller.send(:valid_authenticity_token?, session, encoded_masked_token)
+      end
+
       def test_perform_csrf_token_authenticity
         # NOTE: In test, `request.path` returns "/", so we need to pass "" into `action`.
         # See https://github.com/rails/rails/blob/6-1-stable/actionpack/lib/action_controller/metal/request_forgery_protection.rb#L389
@@ -40,6 +45,13 @@ module ActionPack
           encoded_masked_token = @controller.mask_token(per_form_csrf_token, urlsafe_encode)
           assert @controller.send(:valid_authenticity_token?, session, encoded_masked_token)
         end
+      end
+
+      def test_real_csrf_token_authenticity
+        real_csrf_token = @controller.send(:real_csrf_token, session)
+        encoded_unmasked_token = ::Base64.strict_encode64(real_csrf_token)
+
+        assert @controller.send(:valid_authenticity_token?, session, encoded_unmasked_token)
       end
     end
   end
