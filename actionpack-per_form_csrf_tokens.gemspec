@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "actionpack", "~> 4.2"
   spec.add_dependency "activesupport", "~> 4.2"
 
-  spec.add_development_dependency "rails"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "railties"
+  spec.add_development_dependency "rake"
   spec.add_development_dependency "sqlite3", "< 1.4.0"
 end
