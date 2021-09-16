@@ -2,6 +2,8 @@
 
 [![Gem Version](https://badge.fury.io/rb/actionpack-per_form_csrf_tokens.svg)](http://badge.fury.io/rb/actionpack-per_form_csrf_tokens)
 [![Test](https://github.com/yasaichi/actionpack-per_form_csrf_tokens/actions/workflows/test.yml/badge.svg)](https://github.com/yasaichi/actionpack-per_form_csrf_tokens/actions/workflows/test.yml)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/1659305c3b9000435d8c/test_coverage)](https://codeclimate.com/github/yasaichi/actionpack-per_form_csrf_tokens/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/1659305c3b9000435d8c/maintainability)](https://codeclimate.com/github/yasaichi/actionpack-per_form_csrf_tokens/maintainability)
 
 `actionpack-per_form_csrf_tokens` is a backport of per-form CSRF tokens (introduced in Rails 5) into Rails 4.2.  
 Note that this gem only adds some patches into `ActionController::Base` to "accept" new-format tokens, because it's aimed for enabling Rails 4.2 apps to exchange them with Rails 5.x or higher ones.
