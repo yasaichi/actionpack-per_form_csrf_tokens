@@ -22,6 +22,14 @@ module ActionPack
         @controller.send(:real_csrf_token, session)
       end
 
+      def test_invalid_token_detection
+        refute @controller.send(:valid_authenticity_token?, session, "Invalid as Base64")
+      end
+
+      def test_malformed_token_detection
+        refute @controller.send(:valid_authenticity_token?, session, "Zm9v")
+      end
+
       def test_global_csrf_token_authenticity
         global_csrf_token = @controller.send(:global_csrf_token, session)
 
