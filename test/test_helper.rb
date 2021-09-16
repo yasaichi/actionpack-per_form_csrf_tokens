@@ -1,8 +1,15 @@
 # Configure Rails Environment
 ENV["RAILS_ENV"] = "test"
 
-require "irb"
+if ENV["COVERAGE"]
+  require "simplecov"
 
+  SimpleCov.start do
+    add_filter "/test/"
+  end
+end
+
+require "irb"
 require File.expand_path("../test/dummy/config/environment.rb", __dir__)
 require "rails/test_help"
 

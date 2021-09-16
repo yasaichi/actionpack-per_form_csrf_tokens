@@ -20,5 +20,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "railties"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "simplecov", "~> 0.10", "< 0.18" # See https://github.com/codeclimate/test-reporter/issues/413
   spec.add_development_dependency "sqlite3", "< 1.4.0"
 end
